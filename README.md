@@ -35,24 +35,32 @@ user, the basic credentials for the user could be modified.
 1. Copy the user certificate files and the CA to your client configuration 
    directory
 
+```
     cp test_test.* ca.cert.pem ~/.task/
+```
 
 2. Get your user identification, input this value in `taskd.credentials` config 
 later
 
+```
     cat userid.key
+```
 
 3. Configure your client directorya with these values
 
+```
     task config taskd.certificate -- ~/.task/<TASKD_USER_FIRST>_<TASKD_USER_LAST>.cert.pem
     task config taskd.key -- ~/.task/<TASKD_USER_FIRST>_<TASKD_USER_LAST>.key.pem
     task config taskd.ca          -- ~/.task/ca.cert.pem
     task config taskd.server      -- <HOSTNAME>:<PORT>
     task config taskd.credentials -- <TASKD_USER_ORG>/<TASKD_USER_FIRST> <TASKD_USER_LAST>/<USER_ID>
+```
 
 **IMPORTANT**: The <HOSTNAME> MUST be the same name as hostname container. Edit 
 your `/etc/hosts` if necessary.
 
 4. Execute your first sync
 
+```
     task sync init
+```
