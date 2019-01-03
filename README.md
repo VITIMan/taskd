@@ -64,3 +64,19 @@ your `/etc/hosts` if necessary.
 ```
     task sync init
 ```
+
+### Android Client
+
+Make it work the Taskwarrior Android Client is easy. https://play.google.com/store/apps/details?id=kvj.taskw
+
+Just follow the recommended settings https://bitbucket.org/kvorobyev/taskwarriorandroid/wiki/Configuration and add this configuration in `.taskrc.android` and you are done.
+
+```
+taskd.certificate=/path/to/first_last.cert.pem
+taskd.key=/path/to/first_last.key.pem
+taskd.ca=/path/to/ca.cert.pem
+taskd.server=office.fritz.box:53589
+taskd.credentials=OrgName/first_last/01234567-89abc-cdef-0123-456789abcdef
+```
+
+Source: https://blag.nullteilerfrei.de/2016/08/05/taskwarrior-on-android/
